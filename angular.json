@@ -16,7 +16,6 @@
             "outputPath": "dist/projeto-buzzfeed",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -64,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "projeto-buzzfeed:build:production"
+              "buildTarget": "projeto-buzzfeed:build:production"
             },
             "development": {
-              "browserTarget": "projeto-buzzfeed:build:development"
+              "buildTarget": "projeto-buzzfeed:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,14 +74,13 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "projeto-buzzfeed:build"
+            "buildTarget": "projeto-buzzfeed:build:development"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
